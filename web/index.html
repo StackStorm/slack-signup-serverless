@@ -48,9 +48,32 @@
 
               <div class="pt4 pb3 tc"><input class="ph4 pointer pv3 input-reset bg-gray bn moon-gray fw4 f5" type="submit" value="Continue" id="btnSignUp"></div>
           </form>
+
         </article>
       </div>
+      <article class="vh-100 dt w-100 bg-black-90" id="popup" style="display: none; position: absolute; z-index: 1">
+
+        <div class="dtc v-mid tc white ph3 ph4-l">
+          <div class="bg-green v-mid tc bn br3 center measure pa2 pt4" id="thankyou" style="display: none">
+            <div class="pb4">
+              <span class="avenir white fw4 f5">Thank you for signing up to our Slack Community. <br />
+              An invite should be heading your way shortly.</span>
+            </div>
+            <div class="pb4">
+              <a class="pa2 ph5 bn no-underline dark-green fw6 bg-white grow" href="https://www.stackstorm.com/blog">Go to StackStorm</a>
+            </div>
+          </div>
+          <div class="bg-red tc bn br3 center measure pa2 pt4" id="error" style="display: none">
+            <div class="pb4">
+              <div class="avenir white fw4 f3">Something went wrong... </div>
+              <div class="avenir white mt2 f5">Please let us know: check the browser console, <br /> and report the problem to <a class="near-white link" href="mailto:support@stackstorm.com">support@stackstorm.com</a></div>
+            </div>
+        </div>
+        </div>
+      </article>
+
     </section>
+
   </div>
 </main>
 </body>

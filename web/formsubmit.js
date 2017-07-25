@@ -38,13 +38,19 @@ form.onsubmit = function (e) {
 
     xhr.onerror = function () {
       console.log(this);
-      form.style.display = "none";
+      popup.style.display = "table"
       errorblock.style.display = "block";
     };
 
     xhr.onload = function () {
-      form.style.display = "none";
-      thankyou.style.display = "block";
+      console.log(this);
+      if (this.status < 400) {
+        popup.style.display = "table"
+        thankyou.style.display = "block";
+      } else {
+        popup.style.display = "table"
+        errorblock.style.display = "block";
+      }
     };
   }
 };
