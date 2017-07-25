@@ -20,7 +20,7 @@ form.onsubmit = function (e) {
   } else {
     var name=data['name'].split(" ");
     data['first_name'] = name[0]
-    data['last_name'] = name[1]
+    data['last_name'] = name[1] ? name[1] : ""
   }
 
   if (data['email'] == "") {
