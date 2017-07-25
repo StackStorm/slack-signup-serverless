@@ -54,5 +54,5 @@ function enableBtn(){
 
   btnSignUp.disabled = false;
   btnSignUp.style.color="white";
-  btnSignUp.style.background="#1e7f58";
+  btnSignUp.style.background="#ff9212";
 }
