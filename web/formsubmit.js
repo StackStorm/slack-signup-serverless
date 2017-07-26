@@ -20,7 +20,7 @@ form.onsubmit = function (e) {
   } else {
     var name=data['name'].split(" ");
     data['first_name'] = name[0]
-    data['last_name'] = name[1]
+    data['last_name'] = name[1] ? name[1] : ""
   }
 
   if (data['email'] == "") {
@@ -38,13 +38,19 @@ form.onsubmit = function (e) {
 
     xhr.onerror = function () {
       console.log(this);
-      form.style.display = "none";
+      popup.style.display = "table"
       errorblock.style.display = "block";
     };
 
     xhr.onload = function () {
-      form.style.display = "none";
-      thankyou.style.display = "block";
+      console.log(this);
+      if (this.status < 400) {
+        popup.style.display = "table"
+        thankyou.style.display = "block";
+      } else {
+        popup.style.display = "table"
+        errorblock.style.display = "block";
+      }
     };
   }
 };
@@ -54,5 +60,5 @@ function enableBtn(){
 
   btnSignUp.disabled = false;
   btnSignUp.style.color="white";
-  btnSignUp.style.background="#1e7f58";
+  btnSignUp.style.background="#ff9212";
 }

@@ -11,16 +11,18 @@ logger.setLevel(logging.INFO)
 
 def endpoint(event, context):
     logger.info("Event received: {}".format(json.dumps(event)))
-    if 'email' not in event:
-        logger.error("Validation Failed")
-        raise Exception("Couldn't create the record: email must be present.")
-
-    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
-
-    item = {k: event[k] for k in ['email', 'first_name', 'last_name']}
+    try:
+        item = {k: event[k] for k in ['email', 'first_name', 'last_name'] if len(str(event[k]))}
+    except KeyError as e:
+        logger.error("ERROR: Can not parse `event`: '{}'\n{}".format(str(event), str(e)))
+        raise
+    try:
+        table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+    except KeyError:
+        logger.error("ERROR: Environment variable DYNAMODB_TABLE must be set.")
+        raise
 
     table.put_item(Item=item)
-
     return {
         "statusCode": 200,
         "body": json.dumps(item)

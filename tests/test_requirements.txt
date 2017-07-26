@@ -1,3 +1,4 @@
 mock
 httmock
 pytest
+boto3 # It exists in AWS lambda but needed here for testing

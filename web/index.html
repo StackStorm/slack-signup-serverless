@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Serverless Slack Invite</title>
+  <title>StackStorm Community Invite</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  <link rel='shortcut icon' href='./favicon.ico' type='image/x-icon' />
   </head>
 
   <script>
@@ -13,27 +14,27 @@
   }
   </script>
 
-  <body class="avenir cover" onload="enableBtn()">
-  <!-- body class="avenir cover" onload="disableBtn()"-->
-
-    <article class="dt w-100 vh-100">
-
-      <div class="dtc v-mid tc center pa2">
-
-        <div class="bg-green tc bn br3 center measure pa2 pt4" id="thankyou" style="display: none">
-          <div class="pb4">
-            <span class="avenir white fw4 f5">Thank you for signing up to our Slack Community. An invite should be heading your way shortly.</span>
-          </div>
-          <div class="pb4">
-            <a class="pa2 ph5 bn no-underline dark-green fw6 bg-white grow" href="index.html">Done</a>
-          </div>
-        </div>
-
-
+<body class="w-100 sans-serif bg-black" onload="enableBtn()">
+<main>
+  <div data-name="component">
+    <section class="flex-ns vh-100 items-center">
+      <div class="mw6 ph5 bg-black">
+        <img src="./iphone-slack.png">
+      </div>
+      <div class="tc tl-ns ph3">
+        <h1 class="near-white f1">
+          <span>STACKSTORM'S&nbsp;</span>
+          <span><font color="#ff9212">OPEN SOURCE <br />COMMUNITY</font>
+          RUNS ON SLACK</span>
+        </h1>
+        <h2 class="f5 tc f3-l fw1 mb4 near-white lh-title">Welcome to StackStorm! </h2>
+        <p class="f5 tc f3-l fw1 near-white lh-title">
+        Please introduce yourself, and leave an email <br /> to receive an invite to our Slack community.
+        </p>
         <article data-name="slack-form" class="center">
           <form action="signup/"
             id="signupform" method="post" enctype="application/x-www-form-urlencoded" accept-charset="utf-8"
-            class="mw7 center ph2 pv1 mt2 bn br2 bg-black-60 measure">
+            class="mw7 center ph2 pv1 mt2 bn br2  measure">
               <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
                 <div class="mt1">
                   <label class="fl fw4 lh-copy f5 near-white pb2" for="name">Name</label>
@@ -46,23 +47,37 @@
                 </div>
               </fieldset>
 
-              <!-- Using Google reCaptcha Test Key. Replace value in data-sitekey with your personal site key-->
-                <!--div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="enableBtn"></div-->
-
-              <div class="pt4 pb3 tc"><input class="ph4 pointer pv3 input-reset bg-gray bn moon-gray fw4 f5" type="submit" value="Request Invite" id="btnSignUp"></div>
+              <div class="pt4 pb3 tc"><input class="ph4 pointer pv3 input-reset bg-gray bn moon-gray fw4 f5" type="submit" value="Continue" id="btnSignUp"></div>
           </form>
+
         </article>
-
-        <div class="bg-red tc bn br3 center measure pa2 pt4" id="error" style="display: none">
-          <div class="pb4">
-            <span class="avenir white fw4 f5">Something went terribly wrong... Check the console.</span>
-          </div>
-        </div>
-
       </div>
 
-    </article>
+      <div class="vh-100 dt w-100 bg-black-90" id="popup" style="display: none; position: fixed; top: 0;
+right: 0; z-index: 1">
+        <div class="dtc v-mid tc white ph3 ph4-l">
+          <div class="bg-green v-mid tc bn br3 center measure pa2 pt4" id="thankyou" style="display: none">
+            <div class="pb4">
+              <span class="avenir white fw4 f5">Thank you for signing up to our Slack Community. <br />
+              An invite should be heading your way shortly.</span>
+            </div>
+            <div class="pb4">
+              <a class="pa2 ph5 bn no-underline dark-green fw6 bg-white grow" href="https://www.stackstorm.com/blog">Go to StackStorm</a>
+            </div>
+          </div>
+          <div class="bg-red tc bn br3 center measure pa2 pt4" id="error" style="display: none">
+            <div class="pb4">
+              <div class="avenir white fw4 f3">Something went wrong... </div>
+              <div class="avenir white mt2 f5">Please let us know: check the browser console, <br /> and report the problem to <a class="near-white link" href="mailto:support@stackstorm.com">support@stackstorm.com</a></div>
+            </div>
+        </div>
+        </div>
+      </div>
 
+    </section>
+
+  </div>
+</main>
 </body>
 <footer>
   <!--script src='https://www.google.com/recaptcha/api.js'></script-->
