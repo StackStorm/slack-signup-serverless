@@ -7,16 +7,18 @@ from record_ac import handler
 
 
 event = {
-    'email': 'dmitri.zimine+yuri.gagarin1@gmail.com',
+    'email': 'yuri.gagarin1@gmail.com',
     'first_name': 'Yuri',
-    'last_name': 'Gagarin'
+    'last_name': 'Gagarin',
+    'country': 'United States',
+    'consent': 'true'
 }
 
 context = {}
 
 env = {
     'URL': 'https://stackstorm.api-usa.com',
-    'API_KEY': '9042624c1641a25936c93fa2fae9986f8b1af950de876485c785dbdb75f0b9af01fc08f4'
+    'API_KEY': 'bfa6d1f199fbf74508509aea59b6df6b0e84833f605af9c9b92778e61c91e10f5ed5133c'
 }
 
 
@@ -39,7 +41,7 @@ class RecordACTest(unittest.TestCase):
         with HTTMock(ok_mock):
             res = handler.endpoint(event, context)
         self.assertEqual(res['statusCode'], 200)
-        print res
+        print (res)
 
     @all_requests
     @mock.patch.dict(os.environ, env)

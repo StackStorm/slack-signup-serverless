@@ -25,6 +25,8 @@ form.onsubmit = function (e) {
 
   if (data['email'] == "") {
     alert("Please enter a valid email address");
+  } else if(data['country'] == "") {
+	  alert("Please select a country");
   } else {
     // construct an HTTP request
     var xhr = new XMLHttpRequest();
