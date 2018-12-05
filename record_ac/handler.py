@@ -83,7 +83,7 @@ def add_ac_contact(config, email, country, first_name='', last_name='', consentC
         failure_reason = (
             'Failed to create AC contact for {}: {} (status code: {})'.format(
                 email, resp.text, resp.status_code))
-        print (failure_reason)  
+        print (failure_reason)
         raise Exception(failure_reason)
 
     return (resp.status_code, resp.text)
