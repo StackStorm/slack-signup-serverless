@@ -30,8 +30,8 @@ It is easy to modify to add your custom steps, have fun!
 3. Configure credentials
 
     1. For AWS credentials, follow [setup docs](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
-        I prefer using [AWS CLI with named profiles](http://docs.aws.amazon.com/cli/latest/userguide/
-        cli-multiple-profiles.html). To use an AWS profile, `export AWS_DEFAULT_PROFILE="profileName"`. Test AWS CLI settings: `aws lambda list-functions`.
+        I prefer using [AWS CLI with named profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html).
+        To use an AWS profile, `export AWS_DEFAULT_PROFILE="profileName"`. Test AWS CLI settings: `aws lambda list-functions`.
 
         To use an AWS profile in Serverless, `export AWS_PROFILE=$AWS_DEFAULT_PROFILE`, to match `aws` CLI profile and avoid confusion. You **MUST** also specify the AWS region in `AWS_REGION` for serverless, as it won't take it from AWS profile. So, three env vars in total:
         
