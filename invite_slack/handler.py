@@ -33,8 +33,8 @@ def endpoint(event, context):
     invite(event.get('email'),
            token=TOKEN,
            team=TEAM,
-           first_name=event.get('first_name'),
-           last_name=event.get('last_name', ''),
+           first_name=event.get('first_name').replace("%27", "'"),
+           last_name=event.get('last_name', '').replace("%27", "'"),
            channel_ids=CHANNEL_IDS)
     return {
         "statusCode": 200,

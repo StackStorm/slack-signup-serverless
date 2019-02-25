@@ -18,6 +18,7 @@ form.onsubmit = function (e) {
   if (data['name'] == "") {
     alert("Please tell us what's your name?");
   } else {
+	data['name'] = data['name'].replace(/'/g, "%27");
     var name=data['name'].split(" ");
     data['first_name'] = name[0]
     data['last_name'] = name[1] ? name[1] : ""
@@ -25,7 +26,11 @@ form.onsubmit = function (e) {
 
   if (data['email'] == "") {
     alert("Please enter a valid email address");
-  } else if(data['country'] == "") {
+  } else {
+	  data['email'] = data['email'].replace(/'/g, "%27");
+  } 
+  
+  if(data['country'] == "") {
 	  alert("Please select a country");
   } else {
     // construct an HTTP request
@@ -35,8 +40,9 @@ form.onsubmit = function (e) {
     xhr.setRequestHeader('Authorization', data['g-recaptcha-response'])
 
     // send the collected data as JSON
-    console.log(data)
+    console.log(data);
     xhr.send(JSON.stringify(data));
+    //xhr.send(JSON.stringify(data).replace(/'/g, "%27"));
 
     xhr.onerror = function () {
       console.log(this);
