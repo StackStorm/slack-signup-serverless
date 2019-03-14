@@ -18,7 +18,7 @@ form.onsubmit = function (e) {
   if (data['name'] == "") {
     alert("Please tell us what's your name?");
   } else {
-	data['name'] = data['name'].replace(/'/g, "%27");
+	data['name'] = data['name'];
     var name=data['name'].split(" ");
     data['first_name'] = name[0]
     data['last_name'] = name[1] ? name[1] : ""
@@ -27,7 +27,7 @@ form.onsubmit = function (e) {
   if (data['email'] == "") {
     alert("Please enter a valid email address");
   } else {
-	  data['email'] = data['email'].replace(/'/g, "%27");
+	  data['email'] = data['email'];
   } 
   
   if(data['country'] == "") {
@@ -42,7 +42,6 @@ form.onsubmit = function (e) {
     // send the collected data as JSON
     console.log(data);
     xhr.send(JSON.stringify(data));
-    //xhr.send(JSON.stringify(data).replace(/'/g, "%27"));
 
     xhr.onerror = function () {
       console.log(this);

@@ -30,10 +30,10 @@ def endpoint(event, context):
 
     res = add_ac_contact(
         config,
-        event.get('email').replace("%27", "'"),
+        event.get('email'),
         country=event.get('country'),
-        first_name=event.get('first_name').replace("%27", "'"),
-        last_name=event.get('last_name', '').replace("%27", "'"),
+        first_name=event.get('first_name'),
+        last_name=event.get('last_name', ''),
         consentCheckBox=event.get('consent'),
         tags='')
     return {
