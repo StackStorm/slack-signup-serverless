@@ -35,7 +35,7 @@ form.onsubmit = function (e) {
     xhr.setRequestHeader('Authorization', data['g-recaptcha-response'])
 
     // send the collected data as JSON
-    console.log(data)
+    console.log(data);
     xhr.send(JSON.stringify(data));
 
     xhr.onerror = function () {
