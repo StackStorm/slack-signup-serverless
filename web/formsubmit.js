@@ -18,7 +18,6 @@ form.onsubmit = function (e) {
   if (data['name'] == "") {
     alert("Please tell us what's your name?");
   } else {
-	data['name'] = data['name'];
     var name=data['name'].split(" ");
     data['first_name'] = name[0]
     data['last_name'] = name[1] ? name[1] : ""
@@ -26,11 +25,7 @@ form.onsubmit = function (e) {
 
   if (data['email'] == "") {
     alert("Please enter a valid email address");
-  } else {
-	  data['email'] = data['email'];
-  } 
-  
-  if(data['country'] == "") {
+  } else if(data['country'] == "") {
 	  alert("Please select a country");
   } else {
     // construct an HTTP request
